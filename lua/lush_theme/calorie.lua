@@ -90,7 +90,7 @@ local theme = lush(function()
     Repeat         { Statement }, -- for, do, while, etc.
     Label          { Statement }, -- case, default, etc.
     Operator       { Statement }, -- "sizeof", "+", "*", etc.
-    Keyword        { fg="#ebbcba", }, -- any other keyword
+    Keyword        { fg="#c4a7e7", }, -- any other keyword
     Exception      { Statement }, -- try, catch, throw
 
     PreProc        { fg="#8ac6f2", }, -- (*) Generic Preprocessor
