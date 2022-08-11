@@ -73,7 +73,7 @@ local theme = lush(function()
     --
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Comment        { fg="#99968b", }, -- Any comment
+    Comment        { fg="#6e6a86", }, -- Any comment
 
     Constant       { fg="#f6c177", }, -- (*) Any constant
     String         { fg="#e0def4", }, -- A string constant: "this is a string"

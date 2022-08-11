@@ -12,5 +12,6 @@ Based on [wombat](https://www.vim.org/scripts/script.php?script_id=1778) and [Ro
 call dein#add('rktjmp/lush.nvim', { 'lazy': 1 })
 call dein#add('calorie/calorie.nvim', { 'depends': ['lush.nvim'] })
 
+set termguicolors
 colorscheme calorie
 ```
