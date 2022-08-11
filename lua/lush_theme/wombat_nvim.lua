@@ -6,7 +6,7 @@ local theme = lush(function()
     ColorColumn     { bg="darkred", }, -- Columns set with 'colorcolumn'
     Conceal         { fg="grey30", }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor          { bg="#656565", }, -- Character under the cursor
-    lCursor         { fg="bg", bg="fg", }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
+    lCursor         { fg="bg", bg="fg" }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM     { }, -- Like Cursor, but used when in IME mode |CursorIM|
     CursorColumn    { bg="#2d2d2d", }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine      { bg="#333435", }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
@@ -15,6 +15,7 @@ local theme = lush(function()
     DiffChange      { bg="darkmagenta", }, -- Diff mode: Changed line |diff.txt|
     DiffDelete      { fg="blue", bg="darkcyan", gui="bold", }, -- Diff mode: Deleted line |diff.txt|
     DiffText        { bg="red", gui="bold", }, -- Diff mode: Changed text within a changed line |diff.txt|
+    Ignore          { fg="bg" }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
     EndOfBuffer     { Ignore }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
     TermCursor      { gui="reverse", }, -- Cursor in a focused terminal
     -- TermCursorNC { }, -- Cursor in an unfocused terminal
@@ -24,31 +25,31 @@ local theme = lush(function()
     FoldColumn      { fg="cyan", bg="grey", }, -- 'foldcolumn'
     SignColumn      { fg="cyan", bg="grey", }, -- Column where |signs| are displayed
     IncSearch       { gui="reverse", }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    Search          { fg="black", bg="yellow", }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
     Substitute      { Search }, -- |:substitute| replacement text highlighting
     LineNr          { fg="#857b6f", bg="#000000", }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr    { fg="yellow", gui="bold", }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen      { fg="#f6f3e8", bg="#857b6f", gui="bold", }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg         { gui="bold", }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea      { }, -- Area for messages and cmdline
+    StatusLine      { fg="#f6f3e8", bg="#444444", }, -- Status line of current window
     MsgSeparator    { StatusLine }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg         { fg="seagreen", gui="bold", }, -- |more-prompt|
     NonText         { fg="#808080", bg="#303030", }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal          { fg="white", bg="#242424" }, -- Normal text
+    Pmenu           { fg="#f6f3e8", bg="#444444", }, -- Popup menu: Normal item.
     NormalFloat     { Pmenu }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
-    Pmenu           { fg="#000000", bg="#999999", }, -- Popup menu: Normal item.
-    PmenuSel        { fg="#3399ff", bg="#f0e68c", gui="reverse", }, -- Popup menu: Selected item.
+    PmenuSel        { fg="#000000", bg="#cae682", gui="reverse", }, -- Popup menu: Selected item.
     PmenuSbar       { fg="#000000", bg="#ffffff", }, -- Popup menu: Scrollbar.
     PmenuThumb      { bg="white", }, -- Popup menu: Thumb of the scrollbar.
     Question        { fg="green", gui="bold", }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine    { Search }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search          { fg="black", bg="yellow", }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
     SpecialKey      { fg="#808080", bg="#343434" }, -- Unprintable characters: text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
     SpellBad        { sp="red", gui="undercurl", }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
     SpellCap        { sp="blue", gui="undercurl", }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     SpellLocal      { sp="cyan", gui="undercurl", }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     SpellRare       { sp="magenta", gui="undercurl", }, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
-    StatusLine      { fg="#f6f3e8", bg="#444444", }, -- Status line of current window
     StatusLineNC    { fg="#857b6f", bg="#444444", }, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     TabLine         { bg="darkgrey", gui="underline", }, -- Tab pages line, not active tab page label
     TabLineFill     { gui="reverse", }, -- Tab pages line, where there are no labels
@@ -108,7 +109,6 @@ local theme = lush(function()
     Debug          { Special }, -- Debugging statements
 
     Underlined     { fg="#80a0ff", gui="underline", }, -- Text that stands out, HTML links
-    Ignore         { fg="bg", }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
     Error          { fg="white", bg="red", }, -- Any erroneous construct
     Todo           { fg="#8f8f8f", bg="yellow", }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
