@@ -3,13 +3,14 @@ local hsl = lush.hsl
 local hsluv = lush.hsluv
 local theme = lush(function()
   return {
-    ColorColumn     { bg="#21202e", }, -- Columns set with 'colorcolumn'
-    Conceal         { fg="grey30", }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
+    ColorColumn     { bg="#26233a", }, -- Columns set with 'colorcolumn'
+    Conceal         { bg="NONE", }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor          { bg="#656565", }, -- Character under the cursor
     -- lCursor         { fg="bg", bg="fg" }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM        { }, -- Like Cursor, but used when in IME mode |CursorIM|
     CursorColumn    { bg="#21202e", }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine      { bg="#21202e", }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorLineNr    { fg="#e0def4" }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     Directory       { fg="#9ccfd8", }, -- Directory names (and other special names in listings)
     DiffAdd         { bg="#9ccfd8", blend=50 }, -- Diff mode: Added line |diff.txt|
     DiffChange      { bg="#26233a", }, -- Diff mode: Changed line |diff.txt|
@@ -19,17 +20,16 @@ local theme = lush(function()
     EndOfBuffer     { Ignore }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
     TermCursor      { gui="reverse", }, -- Cursor in a focused terminal
     -- TermCursorNC { }, -- Cursor in an unfocused terminal
-    ErrorMsg        { fg="#eb6f92", gui="bold", }, -- Error messages on the command line
+    ErrorMsg        { fg="#eb6f92", bold=true, }, -- Error messages on the command line
     VertSplit       { fg="#403d52" }, -- Column separating vertically split windows
     Folded          { fg="#e0def4", bg="#25232e", }, -- Line used for closed folds
     FoldColumn      { fg="#6e6a86" }, -- 'foldcolumn'
     SignColumn      { fg="#e0def4" }, -- Column where |signs| are displayed
-    IncSearch       { fg="#191724", bg="#ebbcba" }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    IncSearch       { fg="#403d52", bg="#ebbcba" }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch       { IncSearch },
-    Search          { gui="reverse" }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+    Search          { fg="#403d52", bg="#ebbcba" }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
     Substitute      { Search }, -- |:substitute| replacement text highlighting
     LineNr          { fg="#6e6a86" }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    CursorLineNr    { fg="#e0def4" }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen      { fg="#e0def4", bg="#403d52" }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg         { fg="#908caa" }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea         { }, -- Area for messages and cmdline
@@ -83,7 +83,7 @@ local theme = lush(function()
     Float          { Number }, -- A floating point constant: 2.3e10
 
     Identifier     { fg="#9ccfd8", }, -- (*) Any variable name
-    Function       { fg="#9ccfd8", }, -- Function name (also: methods for classes)
+    Function       { fg="#e0def4", }, -- Function name (also: methods for classes)
 
     Statement      { fg="#ebbcba", }, -- (*) Any statement
     Conditional    { Statement }, -- if, then, else, endif, switch, etc.
@@ -111,7 +111,7 @@ local theme = lush(function()
     SpecialComment { Special }, -- Special things inside a comment (e.g. '\n')
     Debug          { Special }, -- Debugging statements
 
-    Underlined     { fg="#c4a7e7", gui="underline", }, -- Text that stands out, HTML links
+    Underlined     { fg="#c4a7e7", underline=true, }, -- Text that stands out, HTML links
     Error          { fg="#eb6f92" }, -- Any erroneous construct
     Todo           { fg="#c4a7e7" }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
@@ -121,12 +121,12 @@ local theme = lush(function()
 
     -- See :h lsp-highlight, some groups may not be listed, submit a PR fix to lush-template!
     --
-    -- LspReferenceText            { } , -- Used for highlighting "text" references
-    -- LspReferenceRead            { } , -- Used for highlighting "read" references
-    -- LspReferenceWrite           { } , -- Used for highlighting "write" references
-    -- LspCodeLens                 { } , -- Used to color the virtual text of the codelens. See |nvim_buf_set_extmark()|.
-    -- LspCodeLensSeparator        { } , -- Used to color the seperator between two or more code lens.
-    -- LspSignatureActiveParameter { } , -- Used to highlight the active parameter in the signature help. See |vim.lsp.handlers.signature_help()|.
+    LspReferenceText            { bg="#403d52" } , -- Used for highlighting "text" references
+    LspReferenceRead            { bg="#403d52" } , -- Used for highlighting "read" references
+    LspReferenceWrite           { bg="#403d52" } , -- Used for highlighting "write" references
+    LspCodeLens                 { fg="#908caa" } , -- Used to color the virtual text of the codelens. See |nvim_buf_set_extmark()|.
+    LspCodeLensSeparator        { fg="#524f67" } , -- Used to color the seperator between two or more code lens.
+    LspSignatureActiveParameter { bg="#26233a" } , -- Used to highlight the active parameter in the signature help. See |vim.lsp.handlers.signature_help()|.
 
     -- See :h diagnostic-highlights, some groups may not be listed, submit a PR fix to lush-template!
     --
@@ -172,12 +172,12 @@ local theme = lush(function()
     -- TSException             { } , -- Exception related keywords: `try`, `except`, `finally` in Python.
     TSField                 { fg="#9ccfd8" }, -- Object and struct fields.
     -- TSFloat                 { } , -- Floating-point number literals.
-    TSFunction              { fg="#ebbcba" }, -- Function calls and definitions.
+    TSFunction              { Function }, -- Function calls and definitions.
     TSFuncBuiltin           { fg="#eb6f92" }, -- Built-in functions: `print` in Lua.
     -- TSFuncMacro             { } , -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
     -- TSInclude               { } , -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
     TSKeyword               { fg="#31748f" }, -- Keywords that don't fit into other categories.
-    TSKeywordFunction       { fg="#31748f" }, -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
+    -- TSKeywordFunction       { fg="#31748f" }, -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
     TSKeywordOperator       { fg="#908caa" } , -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
     -- TSKeywordReturn         { } , -- Keywords like `return` and `yield`.
     TSLabel                 { fg="#9ccfd8" } , -- GOTO labels: `label:` in C, and `::label::` in Lua.
@@ -204,11 +204,11 @@ local theme = lush(function()
     -- TSTagAttribute          { } , -- HTML tag attributes.
     TSTagDelimiter          { fg="#908caa" } , -- Tag delimiters like `<` `>` `/`.
     TSText                  { fg="#e0def4" }, -- Non-structured text. Like text in a markup language.
-    TSStrong                { gui="bold", }, -- Text to be represented in bold.
+    TSStrong                { bold=true, }, -- Text to be represented in bold.
     TSEmphasis              { gui="italic", }, -- Text to be represented with emphasis.
-    TSUnderline             { gui="underline", }, -- Text to be represented with an underline.
+    TSUnderline             { underline=true, }, -- Text to be represented with an underline.
     -- TSStrike                { gui="strikethrough", }, -- Strikethrough text.
-    TSTitle                 { fg="#c4a7e7", gui="bold" }, -- Text that is part of a title.
+    TSTitle                 { fg="#c4a7e7", bold=true }, -- Text that is part of a title.
     -- TSLiteral               { String }, -- Literal or verbatim text.
     TSURI                   { Underlined }, -- URIs like hyperlinks or email addresses.
     -- TSMath                  { Special }, -- Math environments like LaTeX's `$ ... $`
@@ -222,6 +222,22 @@ local theme = lush(function()
     -- TSTypeBuiltin           { Type }, -- Built-in types: `i32` in Rust.
     -- TSVariable              { } , -- Variable names that don't fit into other categories.
     TSVariableBuiltin       { fg="#eb6f92" }, -- Variable names defined by the language: `this` or `self` in Javascript.
+
+    -- luka-reineke/indent-blankline.nvim
+    IndentBlanklineChar { fg="#6e6a86" },
+
+    -- hrsh7th/nvim-cmp
+    CmpItemAbbr           { fg="#908caa" },
+    CmpItemAbbrDeprecated { fg="#908caa", strikethrough=true },
+    CmpItemAbbrMatch      { fg="#e0def4", bold=true },
+    CmpItemAbbrMatchFuzzy { fg="#e0def4", bold=true },
+    CmpItemKind           { fg="#c4a7e7" },
+    CmpItemKindClass      { fg="#f6c177" },
+    CmpItemKindFunction   { fg="#c4a7e7" },
+    CmpItemKindInterface  { fg="#f6c177" },
+    CmpItemKindMethod     { fg="#c4a7e7" },
+    CmpItemKindSnippet    { fg="#c4a7e7" },
+    CmpItemKindVariable   { fg="#9ccfd8" },
   }
 end)
 return theme
