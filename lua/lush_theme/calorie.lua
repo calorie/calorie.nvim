@@ -25,9 +25,9 @@ local theme = lush(function()
     Folded          { fg="#e0def4", bg="#25232e", }, -- Line used for closed folds
     FoldColumn      { fg="#6e6a86" }, -- 'foldcolumn'
     SignColumn      { fg="#e0def4" }, -- Column where |signs| are displayed
-    IncSearch       { fg="#403d52", bg="#ebbcba" }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    IncSearch       { fg="#191724", bg="#e0def4" }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch       { IncSearch },
-    Search          { fg="#403d52", bg="#ebbcba" }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+    Search          { fg="#191724", bg="#e0def4" }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
     Substitute      { Search }, -- |:substitute| replacement text highlighting
     LineNr          { fg="#6e6a86" }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     MatchParen      { fg="#e0def4", bg="#403d52" }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -238,6 +238,34 @@ local theme = lush(function()
     CmpItemKindMethod     { fg="#c4a7e7" },
     CmpItemKindSnippet    { fg="#c4a7e7" },
     CmpItemKindVariable   { fg="#9ccfd8" },
+
+		-- glepnir/lspsaga.nvim
+		DefinitionCount               { fg="#ebbcba" },
+		DefinitionIcon                { fg="#ebbcba" },
+		DefintionPreviewTitle         { fg="#ebbcba", bold=true },
+		LspFloatWinBorder             { fg="#403d52" },
+		LspFloatWinNormal             { bg="#191724" },
+		LspSagaAutoPreview            { fg="#908caa" },
+		LspSagaCodeActionBorder       { fg="#403d52" },
+		LspSagaCodeActionContent      { fg="#9ccfd8" },
+		LspSagaCodeActionTitle        { fg="#f6c177", bold=true },
+		LspSagaCodeActionTruncateLine { LspSagaCodeActionBorder },
+		LspSagaDefPreviewBorder       { fg="#403d52" },
+		LspSagaDiagnosticBorder       { fg="#403d52" },
+		LspSagaDiagnosticHeader       { fg="#f6c177", bold=true },
+		LspSagaDiagnosticTruncateLine { LspSagaDiagnosticBorder },
+		LspSagaHoverBorder            { fg="#403d52" },
+		LspSagaDocTruncateLine        { LspSagaHoverBorder },
+		LspSagaFinderSelection        { fg="#f6c177" },
+		LspSagaLspFinderBorder        { fg="#403d52" },
+		LspSagaRenameBorder           { fg="#31748f" },
+		LspSagaRenamePromptPrefix     { fg="#eb6f92" },
+		LspSagaSignatureHelpBorder    { fg="#31748f" },
+		LspSagaShTruncateLine         { LspSagaSignatureHelpBorder },
+		ReferencesCount               { fg="#ebbcba" },
+		ReferencesIcon                { fg="#ebbcba" },
+		SagaShadow                    { bg="#26233a" },
+		TargetWord                    { fg="#c4a7e7" },
   }
 end)
 return theme
