@@ -21,3 +21,7 @@ call dein#add('calorie/calorie.nvim', { 'depends': ['lush.nvim'] })
 set termguicolors
 colorscheme calorie
 ```
+
+## Notes
+
+This was built with [lush.nvim](https://github.com/rktjmp/lush.nvim).
