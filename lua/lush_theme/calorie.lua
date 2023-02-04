@@ -287,6 +287,7 @@ local theme = lush(function()
     TelescopeBorder         { fg = highlight_med, bg = surface },
     TelescopeMatching       { fg = rose },
     TelescopeNormal         { fg = subtle, bg = surface },
+    TelescopePreviewNormal  { fg = text, bg = surface },
     TelescopePromptNormal   { fg = text, bg = surface },
     TelescopePromptPrefix   { fg = subtle },
     TelescopeSelection      { fg = text, bg = overlay },
