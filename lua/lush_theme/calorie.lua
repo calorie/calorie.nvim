@@ -282,6 +282,16 @@ local theme = lush(function()
     ReferencesIcon                { fg = rose },
     SagaShadow                    { bg = overlay },
     TargetWord                    { fg = iris },
+
+    -- nvim-telescope/telescope.nvim
+    TelescopeBorder         { fg = highlight_med, bg = surface },
+    TelescopeMatching       { fg = rose },
+    TelescopeNormal         { fg = subtle, bg = surface },
+    TelescopePromptNormal   { fg = text, bg = surface },
+    TelescopePromptPrefix   { fg = subtle },
+    TelescopeSelection      { fg = text, bg = overlay },
+    TelescopeSelectionCaret { fg = rose, bg = overlay },
+    TelescopeTitle          { fg = subtle },
   }
 end)
 return theme
