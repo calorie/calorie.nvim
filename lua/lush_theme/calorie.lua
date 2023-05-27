@@ -105,7 +105,7 @@ local theme = lush(function()
     Conditional    { Statement }, -- if, then, else, endif, switch, etc.
     Repeat         { Statement }, -- for, do, while, etc.
     Label          { Statement }, -- case, default, etc.
-    Operator       { Statement }, -- "sizeof", "+", "*", etc.
+    Operator       { fg = subtle }, -- "sizeof", "+", "*", etc.
     Keyword        { fg = pine, }, -- any other keyword
     Exception      { Statement }, -- try, catch, throw
 
@@ -123,7 +123,7 @@ local theme = lush(function()
     Special        { fg = rose, }, -- (*) Any special symbol
     SpecialChar    { Special }, -- Special character in a constant
     Tag            { Special }, -- You can use CTRL-] on this
-    Delimiter      { Special }, -- Character that needs attention
+    Delimiter      { fg = subtle }, -- Character that needs attention
     SpecialComment { Special }, -- Special things inside a comment (e.g. '\n')
     Debug          { Special }, -- Debugging statements
 
