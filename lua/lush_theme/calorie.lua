@@ -98,18 +98,18 @@ local theme = lush(function()
     Boolean        { Constant }, -- A boolean constant: TRUE, false
     Float          { Number }, -- A floating point constant: 2.3e10
 
-    Identifier     { fg = blue_gray, }, -- (*) Any variable name
-    Function       { fg = text, }, -- Function name (also: methods for classes)
+    Identifier     { fg = text, }, -- (*) Any variable name
+    Function       { fg = blue_gray, }, -- Function name (also: methods for classes)
 
-    Statement      { fg = rose, }, -- (*) Any statement
+    Statement      { fg = pine, }, -- (*) Any statement
     Conditional    { Statement }, -- if, then, else, endif, switch, etc.
     Repeat         { Statement }, -- for, do, while, etc.
     Label          { Statement }, -- case, default, etc.
     Operator       { Statement }, -- "sizeof", "+", "*", etc.
-    Keyword        { fg = rose, }, -- any other keyword
+    Keyword        { fg = pine, }, -- any other keyword
     Exception      { Statement }, -- try, catch, throw
 
-    PreProc        { fg = pine, }, -- (*) Generic Preprocessor
+    PreProc        { fg = iris, }, -- (*) Generic Preprocessor
     Include        { PreProc }, -- Preprocessor #include
     Define         { PreProc }, -- Preprocessor #define
     Macro          { PreProc }, -- Same as Define
