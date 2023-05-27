@@ -92,9 +92,9 @@ local theme = lush(function()
     Comment        { fg = muted, }, -- Any comment
 
     Constant       { fg = gold, }, -- (*) Any constant
-    String         { fg = gold, }, -- A string constant: "this is a string"
+    String         { fg = text, }, -- A string constant: "this is a string"
     Character      { Constant }, -- A character constant: 'c', '\n'
-    Number         { fg = gold, }, -- A number constant: 234, 0xff
+    Number         { fg = text, }, -- A number constant: 234, 0xff
     Boolean        { Constant }, -- A boolean constant: TRUE, false
     Float          { Number }, -- A floating point constant: 2.3e10
 
