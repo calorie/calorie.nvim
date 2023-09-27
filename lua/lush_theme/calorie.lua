@@ -41,9 +41,9 @@ local theme = lush(function()
     Folded          { fg = text, bg = surface, }, -- Line used for closed folds
     FoldColumn      { fg = muted }, -- 'foldcolumn'
     SignColumn      { fg = text }, -- Column where |signs| are displayed
-    IncSearch       { fg = base, bg = text }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    IncSearch       { fg = text, bg = highlight_high }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch       { IncSearch },
-    Search          { fg = base, bg = text }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+    Search          { fg = text, bg = highlight_high }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
     Substitute      { Search }, -- |:substitute| replacement text highlighting
     LineNr          { fg = muted }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     MatchParen      { fg = text, bg = highlight_med }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -57,7 +57,7 @@ local theme = lush(function()
     NormalNC        { fg = text, bg = base }, -- normal text in non-current windows
     NormalFloat     { fg = text, bg = surface }, -- Normal text in floating windows.
     Pmenu           { fg = subtle, bg = surface, }, -- Popup menu: Normal item.
-    PmenuSel        { fg = text, bg = surface }, -- Popup menu: Selected item.
+    PmenuSel        { fg = text, bg = highlight_med }, -- Popup menu: Selected item.
     PmenuSbar       { bg = highlight_low, }, -- Popup menu: Scrollbar.
     PmenuThumb      { bg = highlight_med, }, -- Popup menu: Thumb of the scrollbar.
     Question        { fg = gold }, -- |hit-enter| prompt and yes/no questions
