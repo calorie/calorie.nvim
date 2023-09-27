@@ -41,9 +41,9 @@ local theme = lush(function()
     Folded          { fg = text, bg = surface, }, -- Line used for closed folds
     FoldColumn      { fg = muted }, -- 'foldcolumn'
     SignColumn      { fg = text }, -- Column where |signs| are displayed
-    IncSearch       { fg = text, bg = highlight_high }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    IncSearch       { fg = love, bg = highlight_high, bold = true, undercurl = true }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch       { IncSearch },
-    Search          { fg = text, bg = highlight_high }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+    Search          { fg = rose, bg = highlight_high, undercurl = true }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
     Substitute      { Search }, -- |:substitute| replacement text highlighting
     LineNr          { fg = muted }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     MatchParen      { fg = text, bg = highlight_med }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
