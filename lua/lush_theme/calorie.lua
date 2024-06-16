@@ -258,7 +258,7 @@ local theme = lush(function()
     -- glepnir/lspsaga.nvim
     DefinitionCount               { fg = rose },
     DefinitionIcon                { fg = rose },
-    DefintionPreviewTitle         { fg = rose, bold = true },
+    DefinitionPreviewTitle        { fg = rose, bold = true },
     LspFloatWinBorder             { fg = highlight_med },
     LspFloatWinNormal             { bg = base },
     LspSagaAutoPreview            { fg = subtle },
