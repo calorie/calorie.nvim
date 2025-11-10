@@ -23,7 +23,7 @@ TSConditional = {link = "Conditional"},
 Constant = {fg = "#f3cc95"},
 Boolean = {link = "Constant"},
 Character = {link = "Constant"},
-Cursor = {fg = "#c9c8db", bg = "#524f67"},
+Cursor = {fg = "#c9c8db", bg = "#31748f"},
 CursorColumn = {bg = "#21202e"},
 CursorLine = {bg = "#21202e"},
 MiniFilesCursorLine = {link = "CursorLine"},
@@ -208,7 +208,6 @@ WinSeparator = {link = "VertSplit"},
 Visual = {bg = "#403d52"},
 WarningMsg = {fg = "#d66B7f"},
 TSDanger = {link = "WarningMsg"},
-iCursor = {fg = "#d66B7f"},
 -- PATCH_CLOSE
 -- content here will not be touched
 }
