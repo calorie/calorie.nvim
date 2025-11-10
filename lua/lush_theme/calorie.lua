@@ -21,7 +21,7 @@ local theme = lush(function()
   return {
     ColorColumn     { bg = overlay }, -- Columns set with 'colorcolumn'
     Conceal         { bg = none, }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
-    -- Cursor          { bg = '#656565', }, -- Character under the cursor
+    Cursor          { fg = text, bg = highlight_high, }, -- Character under the cursor
     -- lCursor         { fg = 'bg', bg = 'fg' }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM        { }, -- Like Cursor, but used when in IME mode |CursorIM|
     CursorColumn    { bg = highlight_low, }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
@@ -293,6 +293,15 @@ local theme = lush(function()
     TelescopeSelection      { fg = text, bg = overlay },
     TelescopeSelectionCaret { fg = rose, bg = overlay },
     TelescopeTitle          { fg = subtle },
+
+    MiniFilesBorder         { fg = highlight_med, bg = surface },
+    MiniFilesBorderModified { DiagnosticFloatingWarn },
+    MiniFilesCursorLine     { CursorLine },
+    MiniFilesDirectory      { Directory },
+    MiniFilesFile           { fg = text },
+    MiniFilesNormal         { NormalFloat },
+    MiniFilesTitle          { fg = foam, bg = surface, bold = true },
+    MiniFilesTitleFocused   { fg = rose, bg = surface, bold = true },
   }
 end)
 return theme
