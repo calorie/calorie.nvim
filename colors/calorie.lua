@@ -214,7 +214,7 @@ TSDanger = {link = "WarningMsg"},
 
 -- colorschemes generally want to do this
 vim.cmd('highlight clear')
-vim.cmd('set t_Co=256')
+-- vim.cmd('set t_Co=256')
 vim.g.colors_name = 'calorie'
 
 -- apply highlight groups
