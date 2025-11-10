@@ -208,6 +208,7 @@ WinSeparator = {link = "VertSplit"},
 Visual = {bg = "#403d52"},
 WarningMsg = {fg = "#d66B7f"},
 TSDanger = {link = "WarningMsg"},
+iCursor = {fg = "#d66B7f"},
 -- PATCH_CLOSE
 -- content here will not be touched
 }
