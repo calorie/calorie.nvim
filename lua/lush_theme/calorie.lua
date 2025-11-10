@@ -22,6 +22,7 @@ local theme = lush(function()
     ColorColumn     { bg = overlay }, -- Columns set with 'colorcolumn'
     Conceal         { bg = none, }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor          { fg = text, bg = highlight_high, }, -- Character under the cursor
+    iCursor         { fg = love }, -- Character under the cursor
     -- lCursor         { fg = 'bg', bg = 'fg' }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM        { }, -- Like Cursor, but used when in IME mode |CursorIM|
     CursorColumn    { bg = highlight_low, }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
