@@ -302,6 +302,19 @@ local theme = lush(function()
     MiniFilesNormal         { NormalFloat },
     MiniFilesTitle          { fg = foam, bg = surface, bold = true },
     MiniFilesTitleFocused   { fg = rose, bg = surface, bold = true },
+
+    -- yetone/avante.nvim
+    AvanteTitle              { fg = highlight_high, bg = rose },
+    AvanteReversedTitle      { fg = rose },
+    AvanteSubtitle           { fg = highlight_med, bg = foam },
+    AvanteReversedSubtitle   { fg = foam },
+    AvanteThirdTitle         { fg = highlight_med, bg = iris },
+    AvanteReversedThirdTitle { fg = iris },
+    AvantePromptInput        { fg = text, bg = surface },
+    AvantePromptInputBorder  { fg = muted },
+
+    -- zbirenbaum/copilot.lua
+    CopilotSuggestion { fg = muted, gui = 'italic' },
   }
 end)
 return theme
